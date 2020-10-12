@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script>//esta funcion se encarga de mostrar y ocultar las imagenes
+        function mostrar(id)
+        {
+            var obje=document.getElementById(id)
+            if(obje.style.display=="block")
+                obje.style.display="none";
+            else
+                obje.style.display="block";
+        }
+    </script>
+    <style>
+        .oculto {display:none;}
+    </style>
+</head>
+ 
+<body>
+<form>
+    <input type="button" onclick="mostrar('1')" value="Mostrar/ocultar ">
+    <input type="button" onclick="mostrar('2')" value="Mostrar/ocultar ">
+    <img src="descarga.jpg" class="oculto" id="1">
+    <img src="unnamed.gif" class="oculto" id="2">
+</form>
+</body>
+</html>
