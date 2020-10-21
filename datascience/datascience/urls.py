@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from datascience.views import interestandar, Estandar
+from datascience.views import Estandar, inicio
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('inte1/',interestandar),
-    path('Estan/',Estandar),
+
+    path('index/', inicio),
+    path('index/userEstandar.html', Estandar)
 ]
 #<int:edad>/<int:agno>

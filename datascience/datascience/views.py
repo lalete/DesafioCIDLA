@@ -4,7 +4,7 @@ from django.template import Template, Context
 from django.template.loader import get_template
 from django.shortcuts import render
 
-def interestandar (request): #edad,agno #V ista interfaz usuario estandar v1
+#def interestandar (request): #edad,agno #V ista interfaz usuario estandar v1
     #fechaup= datetime.datetime.now()
     #edad= 23
     #periodo=agno-2020
@@ -20,8 +20,11 @@ def interestandar (request): #edad,agno #V ista interfaz usuario estandar v1
     #plantilla=doc_ext.render()
     
     #CARGA PLANTILLA V2
-    return render(request,'estandar.html' ) # resquest,plantilla,diccionario
+    #return render(request,'estandar.html' ) # resquest,plantilla,diccionario
 
+def inicio (request): 
+    fechaup= datetime.datetime.now()
+    return render(request, 'inicio.html' , {'damefecha':fechaup} ) 
 def Estandar (resquest): 
     fechaup= datetime.datetime.now()
     return render (resquest, 'userEstandar.html', {'damefecha':fechaup})
