@@ -4,7 +4,7 @@ Mongo_URI = 'mongodb://localhost'
 
 client = MongoClient(Mongo_URI)
 
-db = client['pppprueba']
+db = client['te']
 collection = db['fichas']
 
 collection.insert_one({"nombre": "miguel" , "edad": 20})
