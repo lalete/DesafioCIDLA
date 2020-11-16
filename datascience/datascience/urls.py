@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from datascience.views import Estandar, inicio
 
+#rutas para ingresar al navegador
 urlpatterns = [
     path('admin/', admin.site.urls),
 

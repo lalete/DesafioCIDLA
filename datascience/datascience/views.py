@@ -3,6 +3,13 @@ import datetime
 from django.template import Template, Context
 from django.template.loader import get_template
 from django.shortcuts import render
+import json
+import pandas as pd 
+import math
+import matplotlib.pyplot as plt
+
+from mongoengine import connect
+connect('dbciencia')
 
 #def interestandar (request): #edad,agno #V ista interfaz usuario estandar v1
     #fechaup= datetime.datetime.now()
@@ -22,9 +29,14 @@ from django.shortcuts import render
     #CARGA PLANTILLA V2
     #return render(request,'estandar.html' ) # resquest,plantilla,diccionario
 
+#Funcion que redirecciona al html inicio , ademas muestra la hora al final de la pagina
 def inicio (request): 
     fechaup= datetime.datetime.now()
     return render(request, 'inicio.html' , {'damefecha':fechaup} ) 
+
+# Luego de entrar a la pagina de inicio y seleccionar estandar nos llevara 
+# al html userEstandar.
 def Estandar (resquest): 
     fechaup= datetime.datetime.now()
     return render (resquest, 'userEstandar.html', {'damefecha':fechaup})
+
