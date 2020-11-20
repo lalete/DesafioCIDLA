@@ -54,7 +54,7 @@ ROOT_URLCONF = 'datascience.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/DesafioTI3/TI3/datascience/datascience/plantillas'],
+        'DIRS': ["C:/Users/acer/Desktop/Taller 3/DesafioCIDLA/datascience/datascience/plantillas"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
