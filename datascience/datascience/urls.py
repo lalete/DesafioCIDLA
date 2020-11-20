@@ -14,14 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from datascience.views import Estandar, inicio
+from datos import views
+from django.conf.urls import url
 
 #rutas para ingresar al navegador
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #path('index/', inicio),
+    #path('index/userEstandar.html', Estandar),
+    path('', views.home, name='home'),
+    path('pie-chart/', views.pie_chart, name= 'pie-chart'),
 
-    path('index/', inicio),
-    path('index/userEstandar.html', Estandar)
 ]
 #<int:edad>/<int:agno>
