@@ -1,9 +1,20 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
+import datetime
+from django.template import Template, Context
+from django.template.loader import get_template
+from django.shortcuts import render
+from .forms import UploadDocumentForm
 
-# Create your views here.
-
+from mongoengine import connect
 from datos.models import City
- 
+
+
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
+
+
+#Funcion que redirecciona al html inicio 
 def home(request):
     return render(request, 'home.html')
  
@@ -20,3 +31,20 @@ def pie_chart(request):
         'labels': labels,
         'data': data,
     })
+
+# Luego de entrar a la pagina de inicio y seleccionar estandar nos llevara 
+# al html index.
+def Estandar (resquest): 
+    fechaup= datetime.datetime.now()
+    return render (resquest, 'index.html', {'damefecha':fechaup})
+
+def simple_upload(request):
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.url(filename)
+        return render(request, 'ig.html', {
+            'uploaded_file_url': uploaded_file_url
+        })
+    return render(request, 'ig.html')

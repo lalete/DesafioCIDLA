@@ -15,17 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from datascience.views import Estandar, inicio
-from datos import views
+#from datascience.views import Estandar, inicio
+from datos import views 
 from django.conf.urls import url
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 #rutas para ingresar al navegador
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('index/', inicio),
-    #path('index/userEstandar.html', Estandar),
+    path('index/', views.Estandar, name= 'Estandar'),
     path('', views.home, name='home'),
     path('pie-chart/', views.pie_chart, name= 'pie-chart'),
-
+    
 ]
+urlpatterns += staticfiles_urlpatterns()
 #<int:edad>/<int:agno>

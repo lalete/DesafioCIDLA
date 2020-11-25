@@ -1,16 +1,13 @@
+{% load static %}
 <html>
+    
 <style>
-#menu {margin: 0;
-       padding: 0;
-       list-style: none;
-       text-transform: uppercase;
-       text-align: center;}
-#menu li {
-    display: inline;
-    margin: 0 20px;
-    }
+body {
+        background-image: url("/static/images/fondo.jpg") ;
+	
+}    
 
-#titulo { background-color: aqua; color: azure; text-align: center;
+#titulo { background-color: rgba(216, 107, 19, 0.781); color: azure; text-align: center;
 
 }
 #p1 { background-color: aqua; color: azure; text-align: center;
@@ -28,19 +25,8 @@
 </head>
     <body>
     <h1 id="titulo">ANALISIS DE DATOS</h1>
-    <ul id="menu">
-    <li>HOME</li>
-    <li>ENCUESTA</li>
-    <li>ESTANDAR</li>
-    <li>AVANZADO</li>
-    
-    </ul>
-  
     {% block content %} {% endblock %}
     {% comment %} para cambiar el contenido
     {% endcomment %}
-
-    
-    <p style="text-align: right;"> Estamos a : {{damefecha}}</p>
     </boby>
     </hmtl>
