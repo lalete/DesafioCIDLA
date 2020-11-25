@@ -58,7 +58,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         #'DIRS': ["C:/Users/acer/Desktop/Taller 3/DesafioCIDLA/datascience/datos/plantillas"],
-        'DIRS': ["C:/DesafioTI3/TI3/datascience/datos/plantillas"],
+        'DIRS': ["C:/Users/Wladimir/Documents/GitHub/Nueva carpeta/DesafioCIDLA/datascience/datos/plantillas"],
+        #'DIRS': ["C:/DesafioTI3/TI3/datascience/datos/plantillas"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
