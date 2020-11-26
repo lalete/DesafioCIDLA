@@ -1,0 +1,232 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+   
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<script>
+    $(document).ready(Principal)
+
+    function Principal() {
+      $("#boton4").click(Grafico1);
+    }
+
+    function Grafico1() {
+
+
+      var graf = new CanvasJS.Chart('grafico', {
+        axisY: {
+          title: "PM10"
+        },
+        axisX: {
+          title: "Value"
+        },
+        data: [{
+          color: "red",
+          type: "line",
+          dataPoints: []
+        }]
+      });
+      for (i = 0; i < ({
+          {
+            x
+          }
+        }.length); i++) {
+        graf.options.data[0].dataPoints.push({
+          y: {
+            {
+              x
+            }
+          } [i]
+        });
+
+
+      }
+
+
+
+
+      graf.render();
+
+    }
+</script>  
+</head>
+
+<body>
+
+    <style>
+       body {
+        background-image: url("/static/images/fondo.jpg") ;
+	
+}    
+
+        .bg {
+            background-color: rgba(255, 176, 7, 0.781);
+            margin: 10px;
+            border: .05rem solid #d4831acb;
+        }
+
+        .bg2 {
+            background-color: rgba(255, 176, 7, 0);
+            margin: 10px;
+            border: .05rem solid #d4831a00;
+        }
+
+        .bgc {
+
+            background-color: rgba(245, 133, 28, 0.658);
+            margin-top: 2px;
+            height: 550px;
+
+        }
+
+        .bgc2 {
+
+            background-color: rgba(121, 9, 9, 0.726);
+            margin-top: 2px;
+            height: 550px;
+
+        }
+
+        .bgdiv {
+            background-color: rgba(240, 49, 49, 0.884);
+            border: .05rem solid #d4831a00;
+
+        }
+
+        .bgraf {
+            background-color: rgba(214, 34, 154, 0.322);
+
+
+        }
+
+        .template-footer {
+            margin-top: 10px;
+
+            color: #FFF;
+            text-align: center;
+            background-color: #d85619c4;
+            border-top: .05rem solid #d4551acb;
+        }
+
+        .template-footer p:last-child {
+            margin-bottom: 0;
+
+        }
+
+        footer a {
+            color: #fff;
+            font-size: 14px;
+            transition-duration: 0.2s;
+        }
+
+        .nav {
+            background-color: #d8561998;
+        }
+    </style>
+    <!--Barra de menu-->
+    <nav class="navbar navbar-expand-lg  navbar-dark nav rounded">
+        <a class="navbar-brand lg-0 h1" href="http://127.0.0.1:8000/">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link navbar-brand lg-0 h2"
+                        href="file:///C:/DesafioTI3/TI3/datascience/datascience/plantillas/inicio.html">Inicio</a>
+                </li>
+            </ul>
+            
+        </div>
+        <p style="text-align:right; color: #FFF;"> Estamos a : {{damefecha}}</p>
+    </nav>
+    <br>
+
+
+    <div class="container-lx bg rounded">
+        <h1 class="text-light align-self-center">Bienvenid@ a DataEstandar</h1>
+        <div class="row bg2">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 bgc">
+                    <!--SUBIR ARCHIVOS JSON-->
+                    <form enctype="multipart/form-data" method="post" action="">
+                        <div class="form-group bgdiv rounded">
+                            <label for="exampleFormControlFile1">Subir Archivo Json</label>
+                            <input type="file" class="form-control-file" id="archijson"> {% csrf_token %}
+                            <br>
+                            <button type="submit" class="btn btn-success" style="margin-left: 5px;">Subir</button>
+                        </div>
+                    </form>
+                    <!--SELECCIONAR ARCHIVOS JSON-->
+                    <form >
+                        <div class="form-group bgdiv rounded">
+                            <label for="exampleFormControlFile1">Elegir Archivo Json </label>
+                            <select class="form-control form-control-sm">
+                                <option>Fichas</option>
+                            </select>
+                        </div>
+                    </form>
+                    <div class="bgdiv rounded" style="height: 180px;">
+                        <select class="form-control form-control-sm">
+                            <option>Campos</option>
+                        </select>
+                        <label for="exampleFormControlFile1">Campo elegido: </label>
+                    </div>
+                </div>
+            </div>
+            <!--CONSULTA-->
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <div class="col-12 bgc2">
+                    <div id="grafico" class="grafico  "> </div>
+                    <div class="align-self-center">
+                        <button id="boton4">Consultas Tabla</button></div>
+                </div>
+            </div>
+            <!--GRAFICOS-->
+            <div class="col-12 col-md-6 col-lg-4 ">
+
+                <div class="col-12 bgraf">
+
+                    <div id="grafico" class="grafico" style="height:240px;margin-top: 3px; "> </div>
+
+                    <button id="boton4">Barra</button>
+                </div>
+
+
+                <div class="col-12 bgdiv">
+                    <div id="grafico" class="grafico  " style="height:240px;margin-top: 3px;"> </div>
+
+                    <button id="boton4">Regresion Lineal</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="template-footer">
+
+        <div class="row justify-content-center ">
+            <p>&copy; DataSciencie 2020</p>
+        </div>
+    </footer>
+    <script src="{% static 'js/funciones.js' %}"></script>
+    <!--Canvas-->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <!-- jQuery -->
+    <script src="{ % static 'js/jquery-3.5.1.min.js' %}"></script>
+    <script src="http://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <link href="http://unpkg.com/leaflet@1.0.2/dist/leaflet.css" rel="stylesheet">
+    <!-- Popper -->
+    <script src="{ % static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>
