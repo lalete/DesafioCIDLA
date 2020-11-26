@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
 #from datascience.views import Estandar, inicio
 from datos import views 
 from django.conf.urls import url
@@ -25,9 +26,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #path('index/', inicio),
     path('index/', views.Estandar, name= 'Estandar'),
+    path('prueba/', views.subir, name= 'subir'),
+    path('ig/', views.mostrar, name= 'mostrar'),
     path('', views.home, name='home'),
-    path('pie-chart/', views.pie_chart, name= 'pie-chart'),
+    #path(r'^upload/(?P<filename>[^/]+)$', FileUploadView.as_view()),
     
 ]
 urlpatterns += staticfiles_urlpatterns()
+
 #<int:edad>/<int:agno>
