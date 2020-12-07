@@ -20,8 +20,5 @@ import json
     print(b)
     return render(request, 'prueba.html')
 """
-api_view(['GET','POST','DELETE'])
-def consultas(request,dato):
-    queryset=Sciencia.objects.filter(id=dato)
-    return 
+
 
