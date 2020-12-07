@@ -1,0 +1,32 @@
+{% load static %}
+<html>
+    
+<style>
+body {
+        background-image: url("/static/images/fondo.jpg") ;
+	
+}    
+
+#titulo { background-color: rgba(216, 107, 19, 0.781); color: azure; text-align: center;
+
+}
+#p1 { background-color: aqua; color: azure; text-align: center;
+
+}
+
+</style>
+
+<head>
+    <title>
+        {% block title %} {% endblock %} 
+        {% comment %} para cambiar titulo dependiendo la pagina
+        {% endcomment %}
+    </title>
+</head>
+    <body>
+    <h1 id="titulo">ANALISIS DE DATOS</h1>
+    {% block content %} {% endblock %}
+    {% comment %} para cambiar el contenido
+    {% endcomment %}
+    </boby>
+    </hmtl>
