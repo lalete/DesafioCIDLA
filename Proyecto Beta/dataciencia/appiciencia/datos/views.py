@@ -8,6 +8,8 @@ from datos.models import Sciencia
 import json
 
 
+def home(request):
+    return render(request,'prueba.html')
 
 # Create your views here.
 """def subir(request):

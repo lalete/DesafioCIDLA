@@ -61,7 +61,8 @@ ROOT_URLCONF = 'appiciencia.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/dataciencia/appiciencia/datos/plantillas'],
+        'DIRS': ['C:/Users/Wladimir/Documents/GitHub/Nueva carpeta/DesafioCIDLA/datascience/datos/plantillas'],
+        #'DIRS': ['C:/dataciencia/appiciencia/datos/plantillas'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -19,6 +19,7 @@ from datos import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path ('app/v1/', include('datos.urls')),
+    path('app/v1/', include('datos.urls')),
+    path('', views.home, name='home'),
      #path('prueba/', views.subir, name= 'subir'),
 ]
